@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoNest  |  Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'css/infoset_icon.webp' %}">
+
+</head>
+<body>
+
+
+    <div class="main">
+
+        <div class="info">
+            <h1> Sign Up</h1>
+            <form action="" id="form-create">
+                <input type="text" name="name" placeholder="Full name" id="name"><br>
+                <p class="error-message">Please enter your name</p>
+
+                <div>
+                    <span id="option">Select your pronouns</span>
+                    <select name="gender" id="">
+                        <option value="M">He/Him</option>
+                        <option value="F">She/Her</option>
+                        <option value="C">Custom</option>
+                    </select>
+                </div>
+                <input type="email" name="email" placeholder="Your Email" id="email"><br>
+                <p class="error-message">Please enter your email</p>
+
+                <input type="text" name="school" placeholder="School name" id="school"><br>
+                <p class="error-message">Please enter the name of your school</p>
+                <input type="password" placeholder="Password" id="pass">
+                <p class="error-message">Please create your password</p>
+                <p>By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+                <input type="submit" id="signup" value="Sign Up">
+            </form>
+            <p>Already have an account? <a href="/" id="login">Login.</a></p>
+            <button><img src="{% static 'images/email.png' %}" alt="" class="images" id="signmail"><a href="/" class="signin_links">Sign In with Email</a></button>
+
+
+        </div>
+    </div>
+    <script src="{% static 'js/signup.js' %}" type="text/javascript"></script>
+</body>
+</html>

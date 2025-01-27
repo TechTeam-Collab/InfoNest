@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | InfoNest</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(270deg, #4A90E2, #50E3C2, #F5A623);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            animation: colorChange 5s infinite alternate;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        /* Popup Styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            animation: slideIn 0.5s ease-in-out;
+            max-width: 600px;
+            width: 90%;
+        }
+
+        .status {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .collaborators {
+            margin-top: 30px;
+            font-size: 1.2rem;
+            color: #555;
+        }
+
+        .collaborators h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .collaborators p {
+            margin: 5px 0;
+        }
+
+        /* Button Styles */
+        button{
+            padding-: 400px;
+        }
+        .open-popup {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin-top: 20px;
+            
+            
+        }
+
+        .open-popup:hover {
+            background-color: #0056b3;
+        }
+
+        /* Animations */
+        @keyframes colorChange {
+            0% { background-color: #4A90E2; }
+            25% { background-color: #50E3C2; }
+            50% { background-color: #F5A623; }
+            75% { background-color: #D0021B; }
+            100% { background-color: #9013FE; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translate(-50%, -60%); opacity: 0; }
+            to { transform: translate(-50%, -50%); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>TechTeam Collaboration</h1>
+    <p>Project Name: InfoNest </p><hr>
+    <p>Join us as we embark on an exciting new project!</p>
+</header>
+
+<!-- Button to Open Popup -->
+<button class="open-popup" onclick="showPopup()">Show Project Status</button>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Popup Message -->
+<div class="popup" id="popup">
+    <p class="status">This project is at the beginning stage By @TechTeam...</p>
+    <p>Stay tuned for updates as we progress!</p>
+    
+    <div class="collaborators">
+        <h3>TechTeam:</h3>
+        <p>I.Shoula</p>
+        <p>Igihozo Belise</p>
+        <p>Burna Ghost</p>
+        <p>Tharcisse</p>
+    </div>
+    <button class="open-popup" onclick="closePopup()">Close</button>
+</div>
+
+<script>
+    function showPopup() {
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('popup').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

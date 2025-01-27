@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'static/infoset_icon.webp' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <title>InfoNest | Login Form</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="login">
+            <p id="loginp">Login</p>
+
+        </div>
+        <div class="submain">
+            <img src="{% static 'images/infoset_icon.webp' %}" alt="A user icon" id="infonest_icon">
+            <form action="" id="form-container">
+                <input type="email" name="email" class="credentials" placeholder="Email" id="email"><br>
+                <p class="error-message"> This filed is required</p>
+                <div class="password-container">
+                    <input type="password" name="password" class="credentials" placeholder="Password" id="password"><br>
+                    <p class="error-message"> This filed is required</p>
+
+
+                    <button type="button" id="lock" onclick="hidepassword()">
+                        <img src="{% static 'images/lock-solid.svg' %}" alt="lock-icon" class="toggle-btn">
+                    </button>
+                </div>    
+                <input type="checkbox" name="remeber" id="remember" ><span>Remember me</span> <span><a href="/forgot"  class="forg_sign" id="forgot">Forgot password?</a></span><br>
+                <input type="submit" value="Submit" id="btn">
+            </form>
+            <button><img src="{% static 'images/email.png' %}" alt="" class="images"><a href="/">Sign In with Email </a></button>
+            <p>Don't have an account? <a href="/signup" class="forg_sign" id="signup">Sign Up</a></p>
+        </div>
+    </div>
+
+    <script>
+        function hidepassword(){
+            const passinput=document.querySelector("#password")
+            if(passinput.type=="password"){
+                passinput.type="text";
+            }
+            else{
+                passinput.type="password"
+            }
+        }
+    </script>
+    <script src="{% static 'js/script.js'%}" type="text/javascript"></script>
+</body>
+</html>
