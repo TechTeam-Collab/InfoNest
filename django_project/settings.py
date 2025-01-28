@@ -27,7 +27,7 @@ SECRET_KEY = 'TechTeam'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = ["https://de24e343-c272-4228-ba38-71e8fdb58a92-00-28w2w3x7ue1zw.worf.repl.co"]
 
 # Application definition
 

@@ -19,7 +19,9 @@
         </div>
         <div class="submain">
             <img src="{% static 'images/infoset_icon.webp' %}" alt="A user icon" id="infonest_icon">
-            <form action="" id="form-container">
+                <form action="/accounts/login/" method="post" id="form-container">
+
+                    {% csrf_token %} 
                 <input type="email" name="email" class="credentials" placeholder="Email" id="email"><br>
                 <p class="error-message"> This filed is required</p>
                 <div class="password-container">
@@ -32,7 +34,7 @@
                     </button>
                 </div>    
                 <input type="checkbox" name="remeber" id="remember" ><span>Remember me</span> <span><a href="/forgot"  class="forg_sign" id="forgot">Forgot password?</a></span><br>
-                <input type="submit" value="Submit" id="btn">
+                    <button type="submit" id="btn">Submit</button>
             </form>
             <button><img src="{% static 'images/email.png' %}" alt="" class="images"><a href="/">Sign In with Email </a></button>
             <p>Don't have an account? <a href="/signup" class="forg_sign" id="signup">Sign Up</a></p>
