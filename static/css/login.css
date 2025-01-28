@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(./assets/books.jpg);
+    background-image: url("{% static 'images/books.jpg' %}");
     font-family: 'Karla';
     color: white;
 }
@@ -44,7 +44,7 @@ input[type="password"]:focus{
 
 }
 .login{   
-    background-image: url(./assets/book.jpg);
+    background-image: url(assets/book.jpg);
     opacity: 0.9;
     color: white;
     font-size: 32px;
