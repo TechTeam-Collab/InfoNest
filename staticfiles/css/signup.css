@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+body{
+    background-image: url(./assets/book.jpg);
+    font-family: 'Karla';
+    font-size: 18px;
+    color: white;
+
+}
+button{
+    background-color: rgb(121, 121, 108);
+    display: block;
+    margin-top: 1rem;
+    border: none;
+    width: 200px;
+    height: 40px ;
+    text-align: center;
+    padding: 0.3rem;
+    font-size: 18px;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(143, 182, 182);
+}
+
+
+h1{
+    font-size: 24px;
+    margin: 1rem;
+}
+
+select{
+    margin: 0.7rem;
+    width: 100px;
+    height: fit-content;
+    padding: 0.5rem;
+}
+
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="password"]
+{
+    width: 300px;
+    height: 30px;
+    margin: 0.8rem;
+    border-radius: 10px;
+    border-style: ridge;
+    padding: 16px;
+    box-shadow: 5px 5px 5px 5px rgb(255, 255, 255);
+
+}
+
+input[type="text"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus
+{
+    border: 2px inset rgb(106, 106, 201);
+    outline: none;
+    box-shadow: 5px 5px 5px 5px rgb(181, 227, 253);
+    transform: translate(10px,10px);
+}
+
+input[type="radio"]{
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 1px solid grey;
+
+}
+input[type="radio"]:checked{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(248, 200, 137);
+}
+.main{
+
+    margin:  4em auto;
+    background-color:  rgb(26, 25, 25);
+    max-width: 400px;
+    height:fit-content;
+    box-shadow: 10px 5px 15px 5px rgb(176, 248, 248);
+    border-radius: 20px ;
+    line-height: 1.8rem;
+}
+
+
+
+.info{
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+
+    padding: 1.5rem;
+
+
+}
+
+.images{
+    width: 24px;
+    height: 24px;
+    background-color: rgb(89, 89, 134);
+
+}
+
+.error-message{
+    display: none;
+    color: red;
+    font-size: 16px;
+}
+
+
+.input-flex{
+    display:flex; 
+}
+#login{
+    color: cadetblue;
+}
+
+#not-valid{
+    display: none;
+}
+
+#signup{
+    box-shadow: none;
+    padding: 0.5rem;
+    width: 100px;
+    margin-left: 8rem;
+}
+
+.input-flex {
+    display: block;
+    align-items: center;
+
+
+}
+
+.input-flex .icon-lock {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 20px;
+    color: gray;
+}
+#signmail{
+    background-color: rgb(121, 121, 108);
+}
+
+#option{
+    padding: 0.8rem;
+}
+
+input.invalid~.error-message{ 
+    display: block;
+}

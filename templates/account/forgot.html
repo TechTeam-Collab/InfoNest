@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'static/infoset_icon.webp' %}">
+    <link rel="stylesheet" href="{% static 'css/verify.css' %}">
+    <title>InfoNest | Passowrd Reset</title>
+</head>
+<body>
+    <nav class="navbar">
+        <h1>InfoNest</h1>
+        <ul>
+            <li><a href="/">Login</a></li>
+            <li><a href="/signup">Register</a></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <h3>Find your account</h3>
+        <p>Enter your email to receive a verification code</p>
+        <form action="" id="for-form">
+            <input type="email" placeholder="Email" id="mail"><br>
+            <p class="error-message">Please enter your email</p>
+            <input type="submit" value="Send" id="btn-submit">
+        </form>
+    </div>
+    <script src="{% static 'js/forgot.js' %}" type="text/javascript"></script>
+</body>
+</html>
