@@ -32,12 +32,13 @@ class CustomLoginView(LoginView):
                     remember_me = request.POST.get('remember_me')
 
                     if not email or not password:
-                        return HttpResponse("<h1>Email and password are required.</h1>", status=400)
-
+                        messages.error(request, 'Please enter your email and password.')
+                        return redirect('/')
                     try:
                         user = User.objects.get(email=email)
                     except User.DoesNotExist:
-                        return HttpResponse("<h1>Invalid email or password.</h1>", status=400)
+                        messages.error(request, 'User does not exist.')
+                        return redirect('/')
 
                     user = authenticate(request, username=user.username, password=password)
                     if user is not None:
@@ -53,7 +54,8 @@ class CustomLoginView(LoginView):
                             name = user.last_name
                             return HttpResponse(f"<h1>Welcome, {name}!</h1>", status=200)
                     else:
-                        return HttpResponse("<h1>Invalid email or password.</h1>", status=400)
+                        messages.error(request, 'Invalid login details.')
+                        return redirect('/')
 
 
 def signup_view(request):
