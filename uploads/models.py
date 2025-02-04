@@ -1,7 +1,7 @@
 import os
 import mimetypes
 from django.db import models
-from account.models import Account
+from django.contrib.auth.models import User
 
 def file_type_directory(instance, filename):
     """
@@ -33,7 +33,7 @@ def file_type_directory(instance, filename):
     return f'uploads/{file_type}/{filename}'
 
 class UserUpload(models.Model):
-    user = models.ForeignKey(Account, on_delete=models.CASCADE)  # Associate upload with a user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  # Associate upload with a user
     file = models.FileField(upload_to=file_type_directory)  # Use the custom directory function
     description = models.TextField(blank=True, null=True)  # Optional description of the file
     uploaded_at = models.DateTimeField(auto_now_add=True)  # Timestamp for when the file was uploaded

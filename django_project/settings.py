@@ -27,7 +27,7 @@ SECRET_KEY = 'TechTeam'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.repl.co"]
+CSRF_TRUSTED_ORIGINS = ["https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.repl.co","https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.replit.dev"]
 
 # Application definition
 
@@ -130,6 +130,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # login required
 LOGIN_URL = '/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

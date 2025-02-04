@@ -1,0 +1,70 @@
+{% extends 'account/admin_page.html' %}
+{% load static %}
+{% block title %} InfoNest | Edit user {% endblock %}
+{% block content %}
+
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="text-center">Edit User Profile</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST" action="">
+                            {% csrf_token %}
+                            <!-- Username -->
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+                            </div>
+
+                            <!-- First Name -->
+                            <div class="form-group">
+                                <label for="first_name">First Name</label>
+                                <input type="text" class="form-control" id="first_name" name="first_name" value="{{ user.first_name }}">
+                            </div>
+
+                            <!-- Last Name -->
+                            <div class="form-group">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name" name="last_name" value="{{ user.last_name }}">
+                            </div>
+
+                            <!-- Role -->
+                            <div class="form-group">
+                                <label for="role">Role</label>
+                                <select class="form-control" id="role" name="role" required>
+                                    <option value="Admin" {% if user.is_superuser %}selected{% endif %}>Admin</option>
+                                    <option value="User" {% if not user.is_superuser %}selected{% endif %}>User</option>
+                                </select>
+                                <div class="form-group">
+                                    <label for="Password">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter new password">
+                                    
+                                    <br>
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-success btn-block">Save Changes</button>
+                            <a class="btn btn-danger btn-block" href="{% url 'user_list' name='admin' %}">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+{% endblock %}

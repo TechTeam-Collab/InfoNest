@@ -1,0 +1,17 @@
+{% extends 'account/admin_page.html' %}
+{% load static %}
+{% block title %} InfoNest | Delete user {% endblock %}
+{% block content %}
+<body style="text-align: center;">
+
+  <h1>Delete user</h1>
+
+<p>Are you sure you want to delete <span style="color: green;" >{{username}}</span> Account?</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit" class="btn btn-success btn-block">Delete</button>
+  <a class="btn btn-danger btn-block" href="{% url 'user_list' name='admin' %}">Cancel</a>
+</form>
+
+  </body>
+{% endblock %}
