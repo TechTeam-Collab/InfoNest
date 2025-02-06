@@ -5,7 +5,14 @@
     font-family: 'Poppins';
 }
 
-
+body{
+    background-image: url(./assets/image.png);
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: 50%;
+    background-attachment: fixed;
+}
 
 .first,
 .second{
@@ -33,15 +40,7 @@
 .offers:hover{
     transform: translate(0, -10px);
 }
-body{
-        background-image: url('');
-        align-items: center;
-        justify-content: center;
-        background-position: center;
-        background-size: 50%;
-        background-attachment: fixed;
-    }
-</style>
+
 .first{
     margin: 20px auto;
 }
