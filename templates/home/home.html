@@ -1,0 +1,118 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoNest</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/logo.png' %}">    
+    <link rel="stylesheet" href="{% static 'css/foot.css' %}">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-darkest">
+        <a class="navbar-brand" href="#">InfoNest</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="damn.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Create Doc</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Doc List</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Shared Docs</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
+                <li class="nav-item"><a class="btn btn-primary" href="/login">Login</a></li>
+                <li class="nav-item"><a class="btn btn-secondary" href="/signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="priority">
+                    <h2 class="sub-title">Our priority:</h2>
+                    <p class="text_info">Our priority is to help our users to become productive and maintain organization by providing them with services that help them to make them and their organizations or teams productive.</p>
+                    <img src="{% static 'images/image (1).png' %}" class="img-fluid" alt="Priority Image">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info">
+                    <h2 class="sub-title">Why Us?</h2>
+                    <p class="text_info">With InfoNest you can be sure of the security and integrity of your documents.</p>
+                    <img src="{% static 'images/image (2).png' %}" class="img-fluid" alt="Why Us Image">
+                </div>
+            </div>
+        </div>
+        <button id="start" class="btn btn-success mt-3"><a href="/signup" class="text-white">Get Started!</a></button>
+        <h2 class="sub-title mt-5" id="offer">What do we offer?</h2>
+        <div class="row">
+            <div class="col-md-6 offers">
+                <p class="text_info">We offer users services to create manage and share their personal documentation efficiently.</p>
+                <img src="{% static 'images/share.jpeg' %}" class="img-fluid" alt="Share Image">
+            </div>
+            <div class="col-md-6 offers">
+                <p class="text_info">With InfoNest users safely store their documents and files.</p>
+                <img src="{% static 'images/storage.jpeg' %}" class="img-fluid" alt="Storage Image">
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>About Us</h2>
+                    <p id="about">Developed by TechTeam InfoNest, is a web application that allows users to create, manage and share their personal documentation effectively. It aims to enhance productivity and organization of the users.</p>
+                    <div class="social">
+                        <a href="https://www.facebook.com/TechTeam"><span class="fab fa-facebook-f"></span></a>
+                        <a href="https://www.x.com/TechTeam"><span class="fab fa-twitter"></span></a>
+                        <a href="https://www.instagram.com/tech_team25/?utm_source=ig_web_button_share_sheet"><span class="fab fa-instagram"></span></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Address</h2>
+                    <div class="place">
+                        <span class="fas fa-map-marker-alt"></span>
+                        <span class="text">Kigali, Rwanda</span>
+                    </div>
+                    <div class="place">
+                        <span class="fas fa-phone-alt"></span>
+                        <span class="text">+250 790 145 255</span>
+                    </div>
+                    <div class="place">
+                        <span class="fas fa-envelope"></span>
+                        <span class="text">codewars@tuta.io</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h2>Contact Us</h2>
+                    <form>
+                        <div class="email">
+                            <div class="text">Email *</div>
+                            <input type="email" name="email" required class="form-control">
+                        </div>
+                        <div class="msg">
+                            <div class="text">Message *</div>
+                            <textarea name="message" rows="2" cols="30" required class="form-control"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" id="send_btn" class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

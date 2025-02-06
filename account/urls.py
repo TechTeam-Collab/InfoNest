@@ -8,7 +8,8 @@ from . import views
 handler404 =  "account.views.custom_404_view"
 
 urlpatterns = [
-  path('', views.CustomLoginView.as_view(template_name='account/login.html'), name='login'),
+
+  path('login/', views.CustomLoginView.as_view(template_name='account/login.html'), name='login'),
   path('signup/', views.signup_view, name="signup"),
   path('forgot/', views.forgot_view, name="forgot"),
   path('verify/', views.verify_view, name="verify"),

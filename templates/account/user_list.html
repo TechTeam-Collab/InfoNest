@@ -34,8 +34,9 @@
             </thead>
             <tbody>
                 {% for user in users %}
+                <div hidden="True">{{ user.id }}</div>
                 <tr>
-                    <td>{{ user.id }}</td>
+                    <td>{{ forloop.counter  }}</td>
                     <td>{{ user.username }}</td>
                     <td>{{ user.email }}</td>
                     <td>{{ user.is_superuser|yesno:"Admin,User" }}</td>

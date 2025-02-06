@@ -8,7 +8,8 @@ from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 
 
-@login_required(login_url='/')
+
+@login_required(login_url='/login')
 def admin_view(request, name):
                 """
                 Admin view for superusers.
@@ -38,7 +39,7 @@ class CustomLoginView(LoginView):
                         user = User.objects.get(email=email)
                     except User.DoesNotExist:
                         messages.error(request, 'User does not exist.')
-                        return redirect('/')
+                        return redirect('login')
 
                     user = authenticate(request, username=user.username, password=password)
                     if user is not None:
@@ -48,14 +49,14 @@ class CustomLoginView(LoginView):
                         else:
                             request.session.set_expiry(0)
                         if user.is_superuser:
-                            name = user.last_name
+                            name = user.username
                             return redirect(f'/admin_page/{name}/')
                         else:
-                            name = user.last_name
-                            return HttpResponse(f"<h1>Welcome, {name}!</h1>", status=200)
+                            name = user.username
+                            return render(request, 'profile/user_page.html')
                     else:
                         messages.error(request, 'Invalid login details.')
-                        return redirect('/')
+                        return redirect('login')
 
 
 def signup_view(request):
@@ -72,10 +73,11 @@ def signup_view(request):
                     if not first_name or not last_name or not email or not password or not confirm_password:
                         return HttpResponse("<h1>All fields are required.</h1>", status=400)
                     if password != confirm_password:
-                        return HttpResponse("<h1>Passwords do not match.</h1>", status=400)
-
+                        messages.error(request, 'Passwords do not match.')
+                        return redirect('signup')
                     if User.objects.filter(email=email).exists():
-                        return HttpResponse("<h1>Email already exists.</h1>", status=400)
+                        messages.error(request, 'Email already exists.')
+                        return redirect('signup')
 
                     user = User.objects.create_user(
                         username=email,  # Use email as the username
@@ -85,8 +87,7 @@ def signup_view(request):
                         password=password
                     )
                     user.save()
-                    return HttpResponse("<h1>Account created successfully</h1>")
-
+                    return redirect('login')
                 return render(request, 'account/signup.html')
 
 
@@ -120,7 +121,7 @@ def logout_view(request):
 
 
 name="admin"
-@login_required(login_url='/')
+@login_required(login_url='/login')
 def user_list_view(request,name):
         users = User.objects.all()
         if not request.user.is_superuser:
