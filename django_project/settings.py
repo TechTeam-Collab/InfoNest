@@ -27,7 +27,7 @@ SECRET_KEY = 'TechTeam'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.repl.co","https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.replit.dev","https://5b5db319-1b14-4529-b91c-06625446193a-00-b8xx1pckaz8v.picard.repl.co"]
+CSRF_TRUSTED_ORIGINS = ["https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.repl.co","https://f3829a78-d466-4765-9092-962781bf4ffc-00-3ficqelo7r1x0.worf.replit.dev","https://5b5db319-1b14-4529-b91c-06625446193a-00-b8xx1pckaz8v.picard.repl.co","https://5b5db319-1b14-4529-b91c-06625446193a-00-b8xx1pckaz8v.picard.replit.dev"]
 
 # Application definition
 
